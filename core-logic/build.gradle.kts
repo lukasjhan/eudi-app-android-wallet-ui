@@ -39,6 +39,11 @@ dependencies {
     implementation(project(LibraryModule.AuthenticationLogic.path))
     implementation(project(LibraryModule.NetworkLogic.path))
 
+    // openid4vp types (ClaimPath, ClaimPathElement) exposed via wallet-core api
+    api("eu.europa.ec.eudi:eudi-lib-jvm-openid4vp-kt:0.12.4-SNAPSHOT") {
+        exclude(group = "org.bouncycastle")
+    }
+
     implementation(libs.androidx.biometric)
 
     testImplementation(project(LibraryModule.TestLogic.path))
